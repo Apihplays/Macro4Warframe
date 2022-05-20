@@ -1,0 +1,21 @@
+#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+; #Warn  ; Enable warnings to assist with detecting common errors.
+SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
+SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+
+if WinActive("ahk_class Warframe")
+Ins::
+Suspend, Permit
+Suspend, Toggle
+Return
+
+Xbutton1::
+	while GetKeyState("Xbutton1","p")
+	{	send {LButton}
+		sleep 20
+		send b
+		sleep 35
+		send b
+		sleep 35
+	}	
+Return
